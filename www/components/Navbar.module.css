@@ -1,0 +1,58 @@
+
+.navbar {
+	width: 100%;
+	height: 60px;
+	background-color: rgb(40, 40, 40);
+	line-height: 60px;
+}
+
+.navlogo {
+	font-size: 1.5rem;
+}
+
+.navlink {
+	background-color: red;
+}
+
+/** SEPARATOR **/
+/** SEPARATOR **/
+/** SEPARATOR **/
+
+.left {
+	position: absolute;
+	left: 20px;
+}
+
+.left > span {
+	font-size: 1.5rem;
+}
+
+.center {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.center a {
+	display: inline-block;
+	/* background-color: red; */
+	border-bottom: 2px solid rgb(173, 216, 230);
+	padding: 0px 10px;
+	margin: 0px 10px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.center a:hover {
+	background-color: rgba(173, 216, 230, 50%);
+}
+
+.center ul {
+	display: flex;
+	list-style: none;
+}
+
+.right {
+	position: absolute;
+	right: 20px;
+}

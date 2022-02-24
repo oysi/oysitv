@@ -1,0 +1,17 @@
+
+.Minesweeper2 {
+	/* background-color: green; */
+	text-align: center;
+}
+
+#Minesweeper2-canvas {
+	background-color: rgb(50, 50, 50);
+	/* width: 800px; */
+	/* height: 600px; */
+}
+
+#Minesweeper2-canvas {
+	/* width: 100%; */
+	max-width: 95%;
+}
+
