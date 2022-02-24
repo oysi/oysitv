@@ -115,6 +115,9 @@ export default function Index({ props }) {
 					</tr>
 					{(() => {
 						console.log("list", list);
+						if (!list) {
+							return <div></div>
+						}
 						return list.map((item, index) => {
 							const date = new Date(item.time*1000 + 60*20*1000);
 							const time = date.toISOString().slice(-13, -5);
