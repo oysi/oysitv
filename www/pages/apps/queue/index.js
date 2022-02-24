@@ -122,7 +122,7 @@ export default function Index({ props }) {
 						}
 						return list.map((item, index) => {
 							const date = new Date(item.time*1000 + 60*20*1000);
-							const time = date.toISOString().slice(-13, -5);
+							const time = date.toISOString().slice(-13, -8);
 							const [min, est, eta] = calc_estimate(index);
 							return (
 								<tr key={item.pos}>
