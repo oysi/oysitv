@@ -34,6 +34,7 @@ export default function Index() {
 		block.cleared = false;
 		block.is_bomb = false;
 		block.is_flag = false;
+		block.is_question = false;
 		block.bombs = 0;
 	}
 	
@@ -212,12 +213,15 @@ export default function Index() {
 				}
 				
 				ctx.fillRect(x*(block_w + block_pad) + block_pad/2, y*(block_h + block_pad) + block_pad/2, block_w, block_h)
-				if (block.cleared || block.is_flag || (block.is_bomb && (show_bombs || board_state.game_over))) {
+				if (block.cleared || block.is_flag || block.is_question || (block.is_bomb && (show_bombs || board_state.game_over))) {
 					ctx.font = "20px sans-serif";
 					let text = "";
 					if (block.is_flag) {
 						text = "*";
 						ctx.fillStyle = "red";
+					} else if (block.is_question) {
+						text = "?";
+						ctx.fillStyle = "black";
 					} else if (block.is_bomb) {
 						text = "*";
 						ctx.fillStyle = "black";
@@ -297,6 +301,7 @@ export default function Index() {
 			// console.log("click", block_x, block_y);
 			if (e.button === 0) {
 				// left
+				if (block.is_flag) return;
 				if (!is_grid_started(grid)) {
 					gen_bombs(grid, block_x, block_y);
 				}
@@ -308,7 +313,16 @@ export default function Index() {
 			} else if (e.button === 2) {
 				// right
 				if (!block.cleared) {
-					block.is_flag = !block.is_flag;
+					if (block.is_flag) {
+						block.is_flag = false;
+						block.is_question = true;
+					} else if (block.is_question) {
+						block.is_question = false;
+						block.is_flag = false;
+						// block.is_flag = !block.is_flag;
+					} else {
+						block.is_flag = true;
+					}
 				}
 			} else if (e.button === 1) {
 				if (!block.cleared) {
