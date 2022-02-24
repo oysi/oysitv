@@ -9,11 +9,13 @@ export default function Index({ props }) {
 	const [error, set_error] = useState();
 	
 	const set_list = (new_list) => {
+		console.log("set_list", new_list);
 		_set_list(new_list);
 		localStorage.setItem("queue_list", JSON.stringify(new_list));
 	}
 	
 	useEffect(() => {
+		console.log("useEffect");
 		try {
 			const data = JSON.parse(localStorage.getItem("queue_list"));
 			if (data) {
