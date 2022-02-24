@@ -24,7 +24,7 @@ export default function Index({ props }) {
 			}
 			// console.log("data", data);
 			// console.log("type", typeof data);
-			set_list(data);
+			// set_list(data);
 		} catch (e) {
 			console.log("error", e);
 		}
@@ -118,7 +118,7 @@ export default function Index({ props }) {
 					{(() => {
 						console.log("list", list);
 						if (!list) {
-							return <div></div>
+							return <div>SOMETHING WENT WRONG</div>
 						}
 						return list.map((item, index) => {
 							const date = new Date(item.time*1000 + 60*20*1000);
