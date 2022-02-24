@@ -14,6 +14,10 @@ export default function Index({ props }) {
 		localStorage.setItem("queue_list", JSON.stringify(new_list));
 	}
 	
+	//TODO: not allow click flag
+	//TODO: add spørmålstegn
+	//TODO: fix time
+	
 	useEffect(() => {
 		console.log("useEffect");
 		try {
@@ -81,7 +85,8 @@ export default function Index({ props }) {
 		const time_remaining = item2.pos/pos_per_sec;
 		
 		const date = new Date((item2.time + time_remaining)*1000);
-		const est = date.toISOString().slice(-13, -8);
+		// const est = date.toISOString().slice(-13, -8);
+		const est = date.toTimeString().slice(0, 5)
 		
 		const h = Math.floor(time_remaining/3600);
 		const m = Math.floor(time_remaining/60%60);
@@ -121,8 +126,9 @@ export default function Index({ props }) {
 							return <div>SOMETHING WENT WRONG</div>
 						}
 						return list.map((item, index) => {
-							const date = new Date(item.time*1000 + 60*20*1000);
-							const time = date.toISOString().slice(-13, -8);
+							const date = new Date(item.time*1000);
+							// const time = date.toISOString().slice(-13, -8);
+							const time = date.toTimeString().slice(0, 5);
 							const [min, est, eta] = calc_estimate(index);
 							return (
 								<tr key={item.pos}>
