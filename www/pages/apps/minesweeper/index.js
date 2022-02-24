@@ -18,7 +18,7 @@ const bomb_colors = {
 	8: "gray",
 }
 
-export default function Minesweeper2() {
+export default function Index() {
 	const grid_w = 24;
 	const grid_h = 24;
 	

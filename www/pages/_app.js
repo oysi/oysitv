@@ -4,7 +4,7 @@ import "./_app.css"
 import Head from 'next/head'
 import Navbar from "../components/Navbar.js";
 
-export default function({ Component, props }) {
+export default function Index({ Component, props }) {
 	return (
 		<div className="App">
 			<Head>

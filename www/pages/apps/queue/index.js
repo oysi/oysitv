@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 
 import { useState, useEffect } from "react";
 
-export default function({ props }) {
+export default function Index({ props }) {
 	
 	const [list, _set_list] = useState([]);
 	const [error, set_error] = useState();

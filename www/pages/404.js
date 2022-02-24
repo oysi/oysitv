@@ -1,5 +1,5 @@
 
-export default function() {
+export default function Index() {
 	return (
 		<div>
 			<h1>404 Not Found</h1>

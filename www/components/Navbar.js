@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 
-export default function() {
+export default function Index() {
 	const router = useRouter();
 	
 	const get_style = (path) => {
