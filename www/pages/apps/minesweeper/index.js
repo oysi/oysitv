@@ -194,9 +194,9 @@ export default function Index() {
 	// }, [])
 	
 	const draw_text = (ctx, text, x, y, w) => {
-		ctx.strokeStyle = "black";
-		ctx.lineWidth = w;
-		ctx.strokeText(text, x, y);
+		// ctx.strokeStyle = "black";
+		// ctx.lineWidth = w;
+		// ctx.strokeText(text, x, y);
 		ctx.strokeStyle = ctx.fillStyle;
 		ctx.lineWidth = 2;
 		ctx.strokeText(text, x, y);
