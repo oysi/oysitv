@@ -117,8 +117,8 @@ export default function Index({ props }) {
 						<th>Pos</th>
 						<th>Time</th>
 						<th>Pos/min</th>
+						<th>Remaining</th>
 						<th>ETA</th>
-						<th>Estimate</th>
 					</tr>
 					{(() => {
 						console.log("list", list);
@@ -153,10 +153,10 @@ export default function Index({ props }) {
 										{index === 0 ? "" : min}
 									</td>
 									<td>
-										{index === 0 ? "" : eta}
+										{index === 0 ? "" : est}
 									</td>
 									<td>
-										{index === 0 ? "" : est}
+										{index === 0 ? "" : eta}
 									</td>
 								</tr>
 							)
