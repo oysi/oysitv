@@ -114,6 +114,7 @@ export default function Index() {
 		if (block.cleared) return;
 		block.cleared = true;
 		block.is_flag = false;
+		block.is_question = false;
 		if (block.bombs > 0 || block.is_bomb) return;
 		for (let ox = -1; ox <= 1; ox++) {
 			for (let oy = -1; oy <= 1; oy++) {
