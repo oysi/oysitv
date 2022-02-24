@@ -112,9 +112,9 @@ export default function Index({ props }) {
 						<th>ETA</th>
 						<th>Estimate</th>
 					</tr>
-					{
+					{(() => {
 						console.log("list", list);
-						list.map((item, index) => {
+						return list.map((item, index) => {
 							const date = new Date(item.time*1000 + 60*20*1000);
 							const time = date.toISOString().slice(-13, -5);
 							const [min, est, eta] = calc_estimate(index);
@@ -149,7 +149,7 @@ export default function Index({ props }) {
 								</tr>
 							)
 						})
-					}
+					})()}
 				</tbody>
 			</table>
 			<br/>
