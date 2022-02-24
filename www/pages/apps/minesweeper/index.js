@@ -70,8 +70,15 @@ export default function Index() {
 		}
 	}
 	
+	const [bomb_start, set_bomb_start] = useState(100);
+	
 	const gen_bombs = (grid, avoid_x, avoid_y) => {
-		for (let bomb_index = 0; bomb_index < 100; bomb_index++) {
+		let max = Number(bomb_start);
+		if (!max) {
+			max = 100;
+		}
+		max = Math.min(max, grid_w*grid_h - 9)
+		for (let bomb_index = 0; bomb_index < max; bomb_index++) {
 			while (true) {
 				let x = Math.floor(Math.random()*grid_w)
 				let y = Math.floor(Math.random()*grid_h)
@@ -411,6 +418,13 @@ export default function Index() {
 							return "Game in progress";
 						}
 					})()}
+				</div>
+				<div>
+					Bombs:<input
+						onChange={(e) => {
+							set_bomb_start(e.target.value);
+						}}
+					/>
 				</div>
 			</div>
 			<div style={{height: "20px"}}/>
