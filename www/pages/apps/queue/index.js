@@ -17,6 +17,7 @@ export default function Index({ props }) {
 		try {
 			const data = JSON.parse(localStorage.getItem("queue_list"));
 			if (data) {
+				console.log("setting list to", data);
 				set_list(data);
 			}
 			// console.log("data", data);
