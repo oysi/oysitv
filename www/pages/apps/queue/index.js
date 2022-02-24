@@ -16,8 +16,11 @@ export default function Index({ props }) {
 	useEffect(() => {
 		try {
 			const data = JSON.parse(localStorage.getItem("queue_list"));
-			console.log("data", data);
-			console.log("type", typeof data);
+			if (data) {
+				set_list(data);
+			}
+			// console.log("data", data);
+			// console.log("type", typeof data);
 			set_list(data);
 		} catch (e) {
 			console.log("error", e);
