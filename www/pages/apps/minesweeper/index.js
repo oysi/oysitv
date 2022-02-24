@@ -245,6 +245,9 @@ export default function Index() {
 						} else if (!block.is_bomb && block.is_flag) {
 							ctx.fillStyle = "green";
 						}
+						if (block.is_bomb && block.is_question) {
+							ctx.fillStyle = "green";
+						}
 					}
 					let posx = x*(block_w + block_pad) + block_pad/2 + block_w/2 - 6
 					let posy = y*(block_h + block_pad) + block_pad/2 + block_h/2 + 6
