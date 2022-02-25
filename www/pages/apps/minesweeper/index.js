@@ -443,6 +443,9 @@ export default function Index() {
 				height={canvas_h}
 				onMouseDown={onMouseDown}
 				onContextMenu={onContextMenu}
+				style={{
+					maxWidth: "95%",
+				}}
 			>
 				Your browser does not support canvas.
 			</canvas>

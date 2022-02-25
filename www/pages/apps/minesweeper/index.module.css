@@ -6,6 +6,7 @@
 
 #Minesweeper2-canvas {
 	background-color: rgb(50, 50, 50);
+	/* max-width: 95%; */
 	/* width: 800px; */
 	/* height: 600px; */
 }

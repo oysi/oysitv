@@ -125,63 +125,6 @@ export default function Index({ props }) {
 		];
 	}
 	
-	useLayoutEffect(() => {
-		const canvas = document.getElementById("canvas");
-		const ctx = canvas.getContext("2d");
-		
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		
-		const graph = [];
-		
-		let max_pos = 0;
-		let max_time = 0;
-		let min_time = Number.MAX_SAFE_INTEGER;
-		
-		for (let index = 0; index < list.length; index++) {
-			const item = list[index];
-			graph[index] = {
-				pos: item.pos,
-				time: item.time,
-			}
-			if (item.pos > max_pos) {
-				max_pos = item.pos;
-			}
-			if (item.time > max_time) {
-				max_time = item.time;
-			}
-			if (item.time < min_time) {
-				min_time = item.time;
-			}
-		}
-		
-		for (let index = 0; index < graph.length; index++) {
-			const item = graph[index];
-			item.pos = item.pos / max_pos;
-			item.time = (item.time - min_time) / (max_time - min_time);
-			item.x = item.time;
-			item.y = 1 - item.pos;
-		}
-		
-		ctx.beginPath();
-		ctx.moveTo(0, 0);
-		for (let index = 0; index < graph.length - 1; index++) {
-			const item1 = graph[index];
-			const item2 = graph[index];
-			
-			// ctx.scale(2, 2);
-			ctx.lineCap = "round";
-			ctx.strokeStyle = "black";
-			ctx.lineWidth = 5;
-			
-			// ctx.beginPath();
-			// ctx.moveTo(item1.x*canvas.width, item1.y*canvas.height);
-			ctx.lineTo(item2.x*canvas.width, item2.y*canvas.height);
-			// ctx.stroke();
-		}
-		ctx.stroke();
-		ctx.closePath();
-	})
-	
 	return (
 		<main className={styles.main}>
 			<h1>Queue estimator</h1>
@@ -257,14 +200,6 @@ export default function Index({ props }) {
 					})()}
 				</tbody>
 			</table>
-			<canvas
-				id="canvas"
-				width={600}
-				height={600}
-				style={{
-					backgroundColor: "orange",
-				}}
-			/>
 			<br/>
 			<div>New entry (position)</div>
 			<input
