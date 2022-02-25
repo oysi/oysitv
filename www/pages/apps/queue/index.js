@@ -9,8 +9,6 @@ export default function Index({ props }) {
 	const [error, set_error] = useState();
 	const [timer_text, set_timer_text] = useState("N/A");
 	
-	let count_towards = 0;
-	
 	const set_list = (new_list) => {
 		console.log("set_list", new_list);
 		_set_list(new_list);
@@ -37,7 +35,7 @@ export default function Index({ props }) {
 		}
 		setInterval(() => {
 			console.log("HELLO");
-			set_timer_text(Date.now() - count_towards);
+			set_timer_text(Math.random());
 		}, 1000)
 	}, [])
 	
@@ -81,6 +79,26 @@ export default function Index({ props }) {
 		e.target.value = "";
 	}
 	
+	const get_count_towards = () => {
+		if (list.length <= 1) {
+			return 0;
+		}
+		const index = list.length - 1;
+		
+		const item1 = list[Math.max(index - 5, 0)];
+		const item2 = list[index];
+		
+		const pos_per_sec = (item1.pos - item2.pos)/(item2.time - item1.time);
+		
+		const time_remaining = item2.pos/pos_per_sec;
+		
+		const count_towards = item2.time + time_remaining;
+		
+		console.log("count_towards", count_towards);
+		
+		return count_towards;
+	}
+	
 	const calc_estimate = (index) => {
 		if (index === 0) {
 			return [];
@@ -92,8 +110,6 @@ export default function Index({ props }) {
 		const pos_per_sec = (item1.pos - item2.pos)/(item2.time - item1.time);
 		
 		const time_remaining = item2.pos/pos_per_sec;
-		
-		count_towards = item2.time + time_remaining;
 		
 		const date = new Date((item2.time + time_remaining)*1000);
 		// const est = date.toISOString().slice(-13, -8);
@@ -113,7 +129,14 @@ export default function Index({ props }) {
 		<main className={styles.main}>
 			<h1>Queue estimator</h1>
 			<br/>
-			<h1>{timer_text}</h1>
+			<h1>{(() => {
+				const dif = Math.ceil(Math.max(get_count_towards() - Date.now()/1000, 0));
+				const h = Math.floor(dif/3600);
+				const m = Math.floor(dif/60%60);
+				const s = Math.floor(dif%60);
+				return h + "h " + ("0" + m).slice(-2) + "m " + ("0" + s).slice(-2) + "s";
+				// return dif;
+			})()}</h1>
 			<br/>
 			<table>
 				<tbody>
