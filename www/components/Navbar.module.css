@@ -1,47 +1,25 @@
 
 .navbar {
-	/* position: relative; */
-	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 60px;
 	background-color: rgb(40, 40, 40);
-	line-height: 60px;
 }
 
-.navlogo {
-	font-size: 1.5rem;
+.left, .center, .right {
+	position: absolute;
 }
-
-.navlink {
-	background-color: red;
-}
-
-/** SEPARATOR **/
-/** SEPARATOR **/
-/** SEPARATOR **/
 
 .left {
-	position: absolute;
 	left: 20px;
-}
-
-.left > span {
 	font-size: 1.5rem;
-}
-
-.center {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
 }
 
 .center a {
-	display: inline-block;
-	/* background-color: red; */
-	border-bottom: 2px solid rgb(173, 216, 230);
-	padding: 0px 10px;
+	padding: 10px 10px;
 	margin: 0px 10px;
-	height: 40px;
-	line-height: 40px;
+	box-shadow: 0px -2px 0px 0px inset rgb(173, 216, 230);
 }
 
 .center a:hover {
@@ -50,19 +28,18 @@
 
 .center ul {
 	display: flex;
-	list-style: none;
+}
+
+.center li {
+	display: inline-block;
 }
 
 .right {
-	position: absolute;
 	right: 20px;
 }
 
 @media (max-width: 600px) {
-	.left {
-		display: none;
-	}
-	.right {
+	.left, .right {
 		display: none;
 	}
 }

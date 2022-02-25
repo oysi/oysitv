@@ -1,0 +1,16 @@
+
+.main {
+	padding: 20px;
+}
+
+.main ul {
+	padding-left: 20px;
+}
+
+.main li {
+	padding: 5px 0px;
+}
+
+.main a {
+	text-decoration: underline;
+}

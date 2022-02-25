@@ -34,6 +34,7 @@ export default function Index() {
 		block.cleared = false;
 		block.is_bomb = false;
 		block.is_flag = false;
+		block.is_question = false;
 		block.bombs = 0;
 	}
 	
@@ -69,8 +70,15 @@ export default function Index() {
 		}
 	}
 	
+	const [bomb_start, set_bomb_start] = useState(100);
+	
 	const gen_bombs = (grid, avoid_x, avoid_y) => {
-		for (let bomb_index = 0; bomb_index < 100; bomb_index++) {
+		let max = Number(bomb_start);
+		if (!max) {
+			max = 100;
+		}
+		max = Math.min(max, grid_w*grid_h - 9)
+		for (let bomb_index = 0; bomb_index < max; bomb_index++) {
 			while (true) {
 				let x = Math.floor(Math.random()*grid_w)
 				let y = Math.floor(Math.random()*grid_h)
@@ -113,6 +121,7 @@ export default function Index() {
 		if (block.cleared) return;
 		block.cleared = true;
 		block.is_flag = false;
+		block.is_question = false;
 		if (block.bombs > 0 || block.is_bomb) return;
 		for (let ox = -1; ox <= 1; ox++) {
 			for (let oy = -1; oy <= 1; oy++) {
@@ -140,6 +149,9 @@ export default function Index() {
 		const board_state = {
 			cleared: 0,
 			bombs_cleared: 0,
+			remaining: 0,
+			game_over: false,
+			won: false,
 		};
 		for (let x = 0; x < grid_w; x++) {
 			for (let y = 0; y < grid_h; y++) {
@@ -150,9 +162,22 @@ export default function Index() {
 						board_state.bombs_cleared += 1;
 					}
 				}
+				// remaining
+				if (!block.is_bomb) {
+					board_state.remaining += 1;
+					if (block.cleared) {
+						board_state.remaining -= 1;
+					}
+				}
 			}
 		}
-		board_state.game_over = board_state.bombs_cleared > 0
+		if (board_state.bombs_cleared > 0) {
+			board_state.game_over = true;
+		}
+		if (board_state.remaining === 0) {
+			board_state.game_over = true;
+			board_state.won = true;
+		}
 		return board_state;
 	}
 	
@@ -169,9 +194,11 @@ export default function Index() {
 	// }, [])
 	
 	const draw_text = (ctx, text, x, y, w) => {
-		ctx.strokeStyle = "black";
-		ctx.lineWidth = w;
-		ctx.strokeText(text, x, y);
+		if (text !== "?") {
+			ctx.strokeStyle = "black";
+			ctx.lineWidth = w;
+			ctx.strokeText(text, x, y);
+		}
 		ctx.strokeStyle = ctx.fillStyle;
 		ctx.lineWidth = 2;
 		ctx.strokeText(text, x, y);
@@ -196,12 +223,15 @@ export default function Index() {
 				}
 				
 				ctx.fillRect(x*(block_w + block_pad) + block_pad/2, y*(block_h + block_pad) + block_pad/2, block_w, block_h)
-				if (block.cleared || block.is_flag || (block.is_bomb && (show_bombs || board_state.game_over))) {
+				if (block.cleared || block.is_flag || block.is_question || (block.is_bomb && (show_bombs || board_state.game_over))) {
 					ctx.font = "20px sans-serif";
 					let text = "";
 					if (block.is_flag) {
 						text = "*";
 						ctx.fillStyle = "red";
+					} else if (block.is_question) {
+						text = "?";
+						ctx.fillStyle = "black";
 					} else if (block.is_bomb) {
 						text = "*";
 						ctx.fillStyle = "black";
@@ -210,6 +240,20 @@ export default function Index() {
 							text = block.bombs;
 						}
 						ctx.fillStyle = bomb_colors[block.bombs];
+					}
+					if (board_state.game_over) {
+						if (block.is_bomb && block.is_flag) {
+							
+						} else if (!block.is_bomb && block.is_flag) {
+							ctx.fillStyle = "green";
+						}
+						if (block.is_question) {
+							if (block.is_bomb) {
+								ctx.fillStyle = "red";
+							} else {
+								ctx.fillStyle = "green";
+							}
+						}
 					}
 					let posx = x*(block_w + block_pad) + block_pad/2 + block_w/2 - 6
 					let posy = y*(block_h + block_pad) + block_pad/2 + block_h/2 + 6
@@ -261,6 +305,8 @@ export default function Index() {
 		// console.log(e.view.innerWidth);
 		const board_state = get_board_state();
 		
+		// console.log(board_state);
+		
 		if (board_state.game_over) {
 			return;
 		}
@@ -279,6 +325,7 @@ export default function Index() {
 			// console.log("click", block_x, block_y);
 			if (e.button === 0) {
 				// left
+				if (block.is_flag) return;
 				if (!is_grid_started(grid)) {
 					gen_bombs(grid, block_x, block_y);
 				}
@@ -290,7 +337,16 @@ export default function Index() {
 			} else if (e.button === 2) {
 				// right
 				if (!block.cleared) {
-					block.is_flag = !block.is_flag;
+					if (block.is_flag) {
+						block.is_flag = false;
+						block.is_question = true;
+					} else if (block.is_question) {
+						block.is_question = false;
+						block.is_flag = false;
+						// block.is_flag = !block.is_flag;
+					} else {
+						block.is_flag = true;
+					}
 				}
 			} else if (e.button === 1) {
 				if (!block.cleared) {
@@ -330,28 +386,55 @@ export default function Index() {
 		<main className={styles.Minesweeper2}>
 			<div style={{height: "20px"}}/>
 			<div>
-				<button onClick={new_game}>New Game</button>
-				<label>
-					<input type="checkbox" checked={show_bombs} onChange={() => set_show_bombs(!show_bombs)}/>
-					Show bombs
-				</label>
-				<label>
-					Bombs: {(() => {
-						let bombs = 0;
-						for (let x = 0; x < grid_w; x++) {
-							for (let y = 0; y < grid_h; y++) {
-								const block = grid[x][y];
-								if (block.is_bomb) {
-									bombs += 1;
-								}
-								if (block.is_flag || (block.is_bomb && block.cleared)) {
-									bombs -= 1;
+				<div>
+					<button onClick={new_game}>New Game</button>
+				</div>
+				<div>
+					<label>
+						<input type="checkbox" checked={show_bombs} onChange={() => set_show_bombs(!show_bombs)}/>
+						Show bombs
+					</label>
+				</div>
+				<div>
+					<label>
+						Bombs: {(() => {
+							let bombs = 0;
+							for (let x = 0; x < grid_w; x++) {
+								for (let y = 0; y < grid_h; y++) {
+									const block = grid[x][y];
+									if (block.is_bomb) {
+										bombs += 1;
+									}
+									if (block.is_flag || (block.is_bomb && block.cleared)) {
+										bombs -= 1;
+									}
 								}
 							}
+							return bombs;
+						})()}
+					</label>
+				</div>
+				<div>
+					{(() => {
+						const board_state = get_board_state();
+						if (board_state.game_over) {
+							if (board_state.won) {
+								return "You won!";
+							} else {
+								return "Game Over";
+							}
+						} else {
+							return "Game in progress";
 						}
-						return bombs;
 					})()}
-				</label>
+				</div>
+				<div>
+					Bombs:<input
+						onChange={(e) => {
+							set_bomb_start(e.target.value);
+						}}
+					/>
+				</div>
 			</div>
 			<div style={{height: "20px"}}/>
 			<canvas
@@ -360,6 +443,9 @@ export default function Index() {
 				height={canvas_h}
 				onMouseDown={onMouseDown}
 				onContextMenu={onContextMenu}
+				style={{
+					maxWidth: "95%",
+				}}
 			>
 				Your browser does not support canvas.
 			</canvas>

@@ -18,27 +18,24 @@ export default function Index() {
 				return {};
 			}
 		}
-		return {borderBottom: "none"};
+		return {boxShadow: "none"};
 	}
 	
 	return (
 		<nav className={styles.navbar}>
 			<div className={styles.left}>
-				<span>oysi.tv</span>
+				<Link href="/"><a>oysi.tv</a></Link>
 			</div>
 			<div className={styles.center}>
 				<ul>
 					<li><Link href="/"><a style={get_style("/")}>Home</a></Link></li>
 					<li><Link href="/apps"><a style={get_style("/apps")}>Apps</a></Link></li>
+					<li><Link href="/test"><a style={get_style("/test")}>Test</a></Link></li>
 				</ul>
 			</div>
-			{/* <div className={styles.right}>
-				<ul>
-					<li>Github</li>
-					<li>Twitch</li>
-					<li>Youtube</li>
-				</ul>
-			</div> */}
+			<div className={styles.right}>
+				<div>Right</div>
+			</div>
 		</nav>
 	)
 }
