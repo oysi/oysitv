@@ -7,6 +7,9 @@ export default function Index({ props }) {
 	
 	const [list, _set_list] = useState([]);
 	const [error, set_error] = useState();
+	const [timer_text, set_timer_text] = useState("N/A");
+	
+	let count_towards = 0;
 	
 	const set_list = (new_list) => {
 		console.log("set_list", new_list);
@@ -32,7 +35,13 @@ export default function Index({ props }) {
 		} catch (e) {
 			console.log("error", e);
 		}
+		setInterval(() => {
+			console.log("HELLO");
+			set_timer_text(Date.now() - count_towards);
+		}, 1000)
 	}, [])
+	
+	
 	
 	const get_val = (e) => {
 		if (e.target.value === "") return [null, ""];
@@ -84,6 +93,8 @@ export default function Index({ props }) {
 		
 		const time_remaining = item2.pos/pos_per_sec;
 		
+		count_towards = item2.time + time_remaining;
+		
 		const date = new Date((item2.time + time_remaining)*1000);
 		// const est = date.toISOString().slice(-13, -8);
 		const est = date.toTimeString().slice(0, 5)
@@ -101,6 +112,8 @@ export default function Index({ props }) {
 	return (
 		<main className={styles.main}>
 			<h1>Queue estimator</h1>
+			<br/>
+			<h1>{timer_text}</h1>
 			<br/>
 			<table>
 				<tbody>
