@@ -1,7 +1,7 @@
 
 import styles from "./index.module.css";
 
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 
 export default function Index({ props }) {
 	
@@ -15,28 +15,22 @@ export default function Index({ props }) {
 		localStorage.setItem("queue_list", JSON.stringify(new_list));
 	}
 	
-	//TODO: not allow click flag
-	//TODO: add spørmålstegn
-	//TODO: fix time
-	
 	useEffect(() => {
-		console.log("useEffect");
 		try {
 			const data = JSON.parse(localStorage.getItem("queue_list"));
 			if (data) {
-				console.log("setting list to", data);
 				set_list(data);
 			}
-			// console.log("data", data);
-			// console.log("type", typeof data);
-			// set_list(data);
 		} catch (e) {
 			console.log("error", e);
 		}
-		setInterval(() => {
-			console.log("HELLO");
+		const interval = setInterval(() => {
+			console.log("interval");
 			set_timer_text(Math.random());
 		}, 1000)
+		return () => {
+			clearInterval(interval);
+		}
 	}, [])
 	
 	
@@ -93,8 +87,6 @@ export default function Index({ props }) {
 		const time_remaining = item2.pos/pos_per_sec;
 		
 		const count_towards = item2.time + time_remaining;
-		
-		console.log("count_towards", count_towards);
 		
 		return count_towards;
 	}
@@ -157,7 +149,6 @@ export default function Index({ props }) {
 						<th>ETA</th>
 					</tr>
 					{(() => {
-						console.log("list", list);
 						if (!list) {
 							return <div>SOMETHING WENT WRONG</div>
 						}

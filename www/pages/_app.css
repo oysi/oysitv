@@ -1,27 +1,74 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root {
+	--bg0: rgb(15, 15, 15);
+	--bg1: rgb(15, 15, 15);
+	--bg2: rgb(15, 15, 15);
+	--bg3: rgb(15, 15, 15);
+}
+
 * {
 	padding: 0;
 	margin: 0;
 	font-family: Montserrat, sans-serif;
 	box-sizing: border-box;
 	text-decoration: none;
-	color: white;
+	color: rgb(255, 255, 255);
+}
+
+html {
+	/* font-size: 14px; */
+}
+
+body {
+	overflow-x: hidden;
 }
 
 html, body {
-	background-color: rgb(20, 20, 20);
+	background-color: var(--bg0);
 }
 
 .App {
-	position: fixed;
-	width: 100%;
-	/* background-color: darkgreen; */
+	width: 100vw;
+}
+
+.Index1 {
+	/* width: 1000px; */
+	/* padding: 20px; */
+	/* background-color: var(--bg3); */
+	display: flex;
+	justify-content: center;
+	/* background-color: red; */
+}
+
+.Index2 {
+	width: 1000px;
+	/* background-color: orange; */
+	margin: 20px;
+	padding: 20px;
 }
 
 button, input {
 	color: black;
+}
+
+h1 {
+	/* padding: 10px; */
+	/* font-size: 1.8rem; */
+}
+
+h2 {
+	/* font-size: 1.4rem; */
+}
+
+
+p {
+	/* padding: 10px; */
+}
+
+h1, p {
+	padding: 10px 0px;
 }
 
 

@@ -34,7 +34,7 @@ export default function Index() {
 				</ul>
 			</div>
 			<div className={styles.right}>
-				<div>Right</div>
+				<div></div>
 			</div>
 		</nav>
 	)

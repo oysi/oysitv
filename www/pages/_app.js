@@ -3,6 +3,7 @@ import "./_app.css"
 
 import Head from 'next/head'
 import Navbar from "../components/Navbar.js";
+import Navbar2 from "../components/Navbar2.js";
 
 export default function Index({ Component, props }) {
 	return (
@@ -10,7 +11,8 @@ export default function Index({ Component, props }) {
 			<Head>
 				<title>oysi.tv</title>
 			</Head>
-			<Navbar/>
+			{/* <Navbar/> */}
+			<Navbar2/>
 			<Component {...props} />
 		</div>
 	)

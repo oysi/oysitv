@@ -5,6 +5,8 @@ import Link from "next/link";
 
 export default function Index() {
 	return (
+		<div className="Index1">
+		<div className="Index2">
 		<main className={styles.main}>
 			<h1>Apps</h1>
 			<ul>
@@ -12,5 +14,7 @@ export default function Index() {
 				<li><Link href="/apps/queue"><a>oysi.tv/queue</a></Link></li>
 			</ul>
 		</main>
+		</div>
+		</div>
 	)
 }
