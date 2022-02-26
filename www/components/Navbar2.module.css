@@ -2,16 +2,16 @@
 .index {
 	display: flex;
 	justify-content: center;
+	background-color: rgb(20, 20, 20);
 }
 
 .navbar {
-	background-color: var(--bg1);
+	/* background-color: var(--bg1); */
 	width: 1000px;
 	height: 60px;
 	display: flex;
 	justify-content: space-between;
-	box-shadow: 0px -1px 0px 0px inset var(--white2);
-	box-shadow: 0px -1px 0px 0px inset var(--white2);
+	/* box-shadow: 0px -1px 0px 0px inset var(--white2); */
 	margin: 0px 20px;
 }
 
