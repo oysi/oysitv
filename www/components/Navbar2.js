@@ -22,6 +22,7 @@ export default function Index() {
 	}
 	
 	return (
+		<div>
 		<div className={styles.index}>
 			<nav className={styles.navbar}>
 				<div className={styles.left}>
@@ -38,6 +39,8 @@ export default function Index() {
 					<div>Right</div>
 				</div>
 			</nav>
+		</div>
+		<div style={{height: "60px"}}/>
 		</div>
 	)
 }

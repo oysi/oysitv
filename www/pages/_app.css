@@ -5,7 +5,7 @@
 	--bg0: rgb(15, 15, 15);
 	--bg1: rgb(20, 20, 20);
 	--bg2: rgb(20, 20, 20);
-	--bg3: rgb(15, 15, 15);
+	--bg3: rgb(255, 0, 255);
 	
 	--accent1: rgb(0, 150, 255);
 	--accent1_50: rgba(0, 150, 255, 50%);
@@ -54,6 +54,20 @@ html, body {
 	padding: 20px;
 	/* background-color: var(--bg2); */
 	/* border: 1px solid var(--white2); */
+	/* border-radius: 10px; */
+	/* border-left: 1px solid var(--white2); */
+	/* border-right: 1px solid var(--white2); */
+	/* border-bottom: 1px solid var(--white2); */
+	/* margin-top: 30px; */
+	/* margin-top: 0px; */
+	/* margin-bottom: 0px; */
+}
+
+@media (max-width: 600px) {
+	.Index2 {
+		/* border: none; */
+		/* background: none; */
+	}
 }
 
 button, input {

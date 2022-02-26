@@ -1,8 +1,11 @@
 
 .index {
+	position: fixed;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	background-color: var(--bg1);
+	border-bottom: 1px solid var(--white2);
 }
 
 .navbar {
@@ -33,7 +36,7 @@
 
 .left a {
 	font-size: 1.6rem;
-	color: var(--white2);
+	/* color: var(--white2); */
 }
 
 .center {
@@ -62,7 +65,7 @@
 }
 
 .right div {
-	color: var(--white2);
+	/* color: var(--white2); */
 }
 
 @media (max-width: 600px) {
