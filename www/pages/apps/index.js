@@ -10,8 +10,8 @@ export default function Index() {
 		<main className={styles.main}>
 			<h1>Apps</h1>
 			<ul>
-				<li><Link href="/apps/minesweeper"><a>oysi.tv/minesweeper</a></Link></li>
-				<li><Link href="/apps/queue"><a>oysi.tv/queue</a></Link></li>
+				<li><Link href="/minesweeper"><a>oysi.tv/minesweeper</a></Link></li>
+				<li><Link href="/queue"><a>oysi.tv/queue</a></Link></li>
 			</ul>
 		</main>
 		</div>

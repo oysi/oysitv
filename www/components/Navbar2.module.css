@@ -11,6 +11,7 @@
 	display: flex;
 	justify-content: space-between;
 	box-shadow: 0px -1px 0px 0px inset var(--white2);
+	box-shadow: 0px -1px 0px 0px inset var(--white2);
 	margin: 0px 20px;
 }
 
@@ -48,11 +49,11 @@
 .center a {
 	padding: 10px 10px;
 	margin: 0px 10px;
-	box-shadow: 0px -2px 0px 0px inset var(--accent);
+	box-shadow: 0px -2px 0px 0px inset var(--accent1);
 }
 
 .center a:hover {
-	background-color: var(--accent50);
+	background-color: var(--accent1_50);
 }
 
 .right {
