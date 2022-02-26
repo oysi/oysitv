@@ -1,0 +1,12 @@
+
+.index1 {
+	display: flex;
+	justify-content: center;
+	/* background-color: red; */
+}
+
+.index2 {
+	width: 1000px;
+	margin: 20px;
+	/* background-color: orange; */
+}

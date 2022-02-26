@@ -6,10 +6,12 @@ import styles from './index.module.css'
 
 export default function Index() {
 	return (
-		<div className="Index1">
-		<div className="Index2">
 		<main className={styles.main}>
 			<h1>Welcome to oysi.tv</h1>
+			<p>
+				Hello! This is my personal website project.
+			</p>
+			
 			<h2>Paragraph 1</h2>
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. Euismod nisi porta lorem mollis aliquam ut porttitor. Pharetra et ultrices neque ornare. Potenti nullam ac tortor vitae. Eget arcu dictum varius duis at consectetur. Ac tortor vitae purus faucibus ornare. Dui sapien eget mi proin sed libero enim sed. Placerat orci nulla pellentesque dignissim enim sit amet. Quam elementum pulvinar etiam non quam lacus. Et malesuada fames ac turpis egestas integer eget aliquet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit.
@@ -32,7 +34,5 @@ export default function Index() {
 			</p>
 			<h3>Test</h3>
 		</main>
-		</div>
-		</div>
 	)
 }
