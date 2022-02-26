@@ -10,7 +10,7 @@
 	height: 60px;
 	display: flex;
 	justify-content: space-between;
-	box-shadow: 0px -1px 0px 0px inset rgb(255, 255, 255);
+	box-shadow: 0px -1px 0px 0px inset var(--white2);
 	margin: 0px 20px;
 }
 
@@ -27,7 +27,11 @@
 
 .left {
 	justify-content: left;
-	font-size: 1.5rem;
+}
+
+.left a {
+	font-size: 1.6rem;
+	color: var(--white2);
 }
 
 .center {
@@ -44,15 +48,19 @@
 .center a {
 	padding: 10px 10px;
 	margin: 0px 10px;
-	box-shadow: 0px -2px 0px 0px inset rgb(173, 216, 230);
+	box-shadow: 0px -2px 0px 0px inset var(--accent);
 }
 
 .center a:hover {
-	background-color: rgba(173, 216, 230, 50%);
+	background-color: var(--accent50);
 }
 
 .right {
 	justify-content: right;
+}
+
+.right div {
+	color: var(--white2);
 }
 
 @media (max-width: 600px) {

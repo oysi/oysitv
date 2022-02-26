@@ -118,6 +118,8 @@ export default function Index({ props }) {
 	}
 	
 	return (
+		<div className="Index1">
+		<div className="Index2">
 		<main className={styles.main}>
 			<h1>Queue estimator</h1>
 			<br/>
@@ -208,5 +210,7 @@ export default function Index({ props }) {
 			<p>Note: You must have 2 entries for it to work. More entries are even better.</p>
 			<p>Note: The most recent estimate should be the most accurate.</p>
 		</main>
+		</div>
+		</div>
 	)
 }

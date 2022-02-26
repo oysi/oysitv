@@ -30,6 +30,7 @@ export default function Index() {
 			<p>
 			Augue interdum velit euismod in pellentesque massa placerat. Mi proin sed libero enim sed faucibus turpis. Sit amet consectetur adipiscing elit ut aliquam purus sit. Ornare lectus sit amet est placerat in egestas. Viverra nibh cras pulvinar mattis nunc sed blandit. In aliquam sem fringilla ut morbi tincidunt. At augue eget arcu dictum varius. In iaculis nunc sed augue lacus viverra. Morbi tristique senectus et netus et malesuada fames ac turpis. Nullam non nisi est sit amet facilisis magna etiam tempor. Commodo nulla facilisi nullam vehicula ipsum a. Dui sapien eget mi proin sed libero. In eu mi bibendum neque egestas congue quisque egestas diam. Est lorem ipsum dolor sit amet consectetur.
 			</p>
+			<h3>Test</h3>
 		</main>
 		</div>
 		</div>
