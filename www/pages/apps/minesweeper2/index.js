@@ -298,7 +298,6 @@ export default function Index() {
 	}
 	
 	const onMouseDown = (e) => {
-		console.log(e);
 		// console.log(e);
 		// console.log("event", e.layerX, e.target.offsetWidth);
 		// console.log(e);
@@ -312,9 +311,20 @@ export default function Index() {
 			return;
 		}
 		
+		// const rect = e.target.getBoundingClientRect()
+		
+		// const x = e.clientX - rect.left;
+		// const y = e.clientY - rect.top;
+		
+		// console.log(x, y);
+		
 		// fix for scaling
-		const pos_x = e.nativeEvent.pageX/e.target.offsetWidth * grid_w;
-		const pos_y = e.nativeEvent.pageY/e.target.offsetHeight * grid_h;
+		// const pos_x = e.pageX/e.target.offsetWidth * grid_w;
+		// const pos_y = e.pageY/e.target.offsetHeight * grid_h;
+		
+		const pos_x = (e.clientX - e.target.offsetLeft)/e.target.offsetWidth * grid_w;
+		const pos_y = (e.clientY - e.target.offsetTop)/e.target.offsetHeight * grid_h;
+		
 		// console.log(pos_x, pos_y);
 		// const pos_x = e.layerX / (block_w + block_pad);
 		// const pos_y = e.layerY / (block_h + block_pad);
