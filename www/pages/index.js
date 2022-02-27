@@ -11,7 +11,8 @@ export default function Index() {
 			<p>
 				Hello! This is my personal website project.
 			</p>
-			
+			<p>Release the river!</p>
+
 			<h2>Paragraph 1</h2>
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. Euismod nisi porta lorem mollis aliquam ut porttitor. Pharetra et ultrices neque ornare. Potenti nullam ac tortor vitae. Eget arcu dictum varius duis at consectetur. Ac tortor vitae purus faucibus ornare. Dui sapien eget mi proin sed libero enim sed. Placerat orci nulla pellentesque dignissim enim sit amet. Quam elementum pulvinar etiam non quam lacus. Et malesuada fames ac turpis egestas integer eget aliquet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit.
