@@ -11,7 +11,7 @@ export default function Index(props) {
 			{
 				props.list.map((item) => {
 					return (
-						<div style={{margin: "5px 0px"}} key={item.path}>
+						<div key={item.path} style={{margin: "5px 0px"}}>
 							<Link href={item.path}>
 								<a>
 									{item.name}

@@ -4,21 +4,25 @@ import fs from "fs";
 const apps = [];
 
 fs.readdirSync(`${__dirname}/../../../pages/apps/`)
-.map((item) => {
-	if (item.includes(".")) return;
+.map((file) => {
+	if (file.includes(".")) return;
 	
-	const data = fs.readFileSync(`${__dirname}/../../../pages/apps/${item}/info.json`, "utf8");
-	const json = JSON.parse(data);
+	const info = JSON.parse(
+		fs.readFileSync(
+			`${__dirname}/../../../pages/apps/${file}/info.json`,
+			"utf8"
+		)
+	);
 	
-	json.item = item;
-	json.key = Math.random();
-	json.path = `/apps/${item}`;
+	if (info.show === false) return;
 	
-	if (!json.category) {
-		json.category = "misc";
+	info.path = `/apps/${file}`;
+	
+	if (!info.category) {
+		info.category = "misc";
 	}
 	
-	apps.push(json);
+	apps.push(info);
 })
 
 export default apps;
