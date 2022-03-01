@@ -6,8 +6,6 @@ import Image from "next/image";
 
 // import list from "./list.json";
 
-import AppList from "../../components/AppList.js";
-
 export default function Index(props) {
 	// console.log(list);
 	// console.log(props);
@@ -55,37 +53,44 @@ export default function Index(props) {
 	)
 }
 
-import fs from "fs";
+import AppList from "../../components/AppList.js";
 
 export function getStaticProps() {
-	// console.log(Object.keys(fs).join(" "));
-	// console.log("getStaticProps");
-	// console.log("__dirname", __dirname);
-	
-	const apps = [];
-	
-	fs.readdirSync(`${__dirname}/../../../pages/apps/`)
-	.map((item) => {
-		if (item.includes(".")) return;
-		
-		// console.log(item);
-		
-		const data = fs.readFileSync(`${__dirname}/../../../pages/apps/${item}/info.json`, "utf8");
-		const json = JSON.parse(data);
-		
-		json.item = item;
-		json.key = Math.random();
-		json.path = `/apps/${item}`;
-		
-		apps.push(json);
-		
-		// console.log(json);
-	})
-	
 	return {
 		props: {
 			msg: "hello world!",
-			apps: apps,
+			apps: AppList,
 		},
 	}
 }
+
+// import fs from "fs";
+
+// export function getStaticProps() {
+// 	const apps = [];
+	
+// 	fs.readdirSync(`${__dirname}/../../../pages/apps/`)
+// 	.map((item) => {
+// 		if (item.includes(".")) return;
+		
+// 		const data = fs.readFileSync(`${__dirname}/../../../pages/apps/${item}/info.json`, "utf8");
+// 		const json = JSON.parse(data);
+		
+// 		json.item = item;
+// 		json.key = Math.random();
+// 		json.path = `/apps/${item}`;
+		
+// 		if (!json.category) {
+// 			json.category = "misc";
+// 		}
+		
+// 		apps.push(json);
+// 	})
+	
+// 	return {
+// 		props: {
+// 			msg: "hello world!",
+// 			apps: apps,
+// 		},
+// 	}
+// }
