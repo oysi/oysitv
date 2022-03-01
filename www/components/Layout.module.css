@@ -6,7 +6,7 @@
 }
 
 .index2 {
-	width: 1000px;
+	width: var(--global-width);
 	margin: 20px;
 	/* background-color: orange; */
 	/* border: 2px solid white; */

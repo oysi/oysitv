@@ -12,6 +12,25 @@ export default function Index() {
 				<li><Link href="/apps/queue"><a>oysi.tv/queue</a></Link></li>
 				<li><Link href="/apps/minesweeper"><a>oysi.tv/minesweeper</a></Link></li>
 			</ul>
+			<h1>Apps</h1>
+			<div className={styles.container}>
+				<div>
+					<Link href="/apps/minesweeper"><a>
+						{/* <div className="bubble"> */}
+							<h2>Minesweeper</h2>
+							<img src="/static/apps/minesweeper/thumbnail.png"/>
+						{/* </div> */}
+					</a></Link>
+				</div>
+				<div>
+					<Link href="/apps/minesweeper"><a>
+						{/* <div className="bubble"> */}
+							<h2>Minesweeper</h2>
+							<img src="/static/apps/minesweeper/thumbnail.png"/>
+						{/* </div> */}
+					</a></Link>
+				</div>
+			</div>
 		</main>
 	)
 }

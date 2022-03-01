@@ -13,7 +13,7 @@
 
 .navbar {
 	/* background-color: var(--bg1); */
-	width: 1000px;
+	width: var(--global-width);
 	height: 60px;
 	display: flex;
 	justify-content: space-between;
@@ -51,6 +51,17 @@
 	/* color: var(--white2); */
 }
 
+.oysi {
+	/* color: var(--accent1); */
+	/* color: var(--accent1); */
+}
+
+.dottv {
+	/* color: var(--accent1); */
+	/* font-size: calc(1.5rem * 0.75); */
+	/* color: var(--accent1); */
+}
+
 .center {
 	/* justify-content: center; */
 }
@@ -84,13 +95,4 @@
 	.left, .right {
 		display: none;
 	}
-}
-
-.oysi {
-	/* color: var(--accent1); */
-}
-
-.dottv {
-	/* font-size: calc(1.5rem * 0.75); */
-	/* color: var(--accent1); */
 }

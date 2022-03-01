@@ -12,9 +12,13 @@
 	--accent1: rgb(0, 150, 255);
 	--accent1_50: rgba(0, 150, 255, 50%);
 	
+	--accent2: rgb(139, 185, 226);
+	
 	--white0: rgb(100%, 100%, 100%);
 	--white1: rgb(90%, 90%, 90%);
 	--white2: rgb(40%, 40%, 40%);
+	
+	--global-width: 1000px;
 }
 
 * {
@@ -72,10 +76,16 @@ h4 { font-size: 1.2rem; }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 1.0rem; }
 
-p { color: rgb(90%, 90%, 90%); }
+p {
+	color: rgb(90%, 90%, 90%);
+}
 
-h1, h2, h3, h4, p {
+p, h1, h2, h3, h4, h5, h6 {
 	padding: 5px 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	/* color: var(--accent2); */
 }
 
 button, input {
