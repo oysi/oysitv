@@ -4,21 +4,17 @@ import styles from "./index.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-// import list from "./list.json";
-
 export default function Index(props) {
-	// console.log(list);
-	// console.log(props);
 	return (
 		<main className={styles.main}>
 			<h1>Apps</h1>
 			{
-				props.apps.map((item) => {
+				props.list.map((item) => {
 					return (
-						<div style={{margin: "5px 0px"}} key={item.key}>
+						<div style={{margin: "5px 0px"}} key={item.path}>
 							<Link href={item.path}>
 								<a>
-									{item.item}
+									{item.name}
 								</a>
 							</Link>
 						</div>
@@ -58,39 +54,7 @@ import AppList from "../../components/AppList.js";
 export function getStaticProps() {
 	return {
 		props: {
-			msg: "hello world!",
-			apps: AppList,
+			list: AppList,
 		},
 	}
 }
-
-// import fs from "fs";
-
-// export function getStaticProps() {
-// 	const apps = [];
-	
-// 	fs.readdirSync(`${__dirname}/../../../pages/apps/`)
-// 	.map((item) => {
-// 		if (item.includes(".")) return;
-		
-// 		const data = fs.readFileSync(`${__dirname}/../../../pages/apps/${item}/info.json`, "utf8");
-// 		const json = JSON.parse(data);
-		
-// 		json.item = item;
-// 		json.key = Math.random();
-// 		json.path = `/apps/${item}`;
-		
-// 		if (!json.category) {
-// 			json.category = "misc";
-// 		}
-		
-// 		apps.push(json);
-// 	})
-	
-// 	return {
-// 		props: {
-// 			msg: "hello world!",
-// 			apps: apps,
-// 		},
-// 	}
-// }
