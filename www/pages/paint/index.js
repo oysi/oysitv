@@ -54,7 +54,7 @@ export default function Index() {
 			onContextMenu={onContextMenu}
 			ref={canvas}
 		>
-			I'm sorry, your browser does not support HTML5 canvas.
+			canvas
 		</canvas>
 	)
 }
