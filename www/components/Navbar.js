@@ -26,7 +26,10 @@ export default function Index() {
 		<div className={styles.index}>
 			<nav className={styles.navbar}>
 				<div className={styles.left}>
-					<Link href="/"><a>oysi.tv</a></Link>
+					<Link href="/"><a>
+						<span className={styles.oysi}>oysi</span>
+						<span className={styles.dottv}>.tv</span>
+					</a></Link>
 				</div>
 				<div className={styles.center}>
 					<ul>
@@ -40,7 +43,9 @@ export default function Index() {
 				</div>
 			</nav>
 		</div>
-		<div style={{height: "60px"}}/>
+		{/* <div style={{height: "60px"}}/> */}
 		</div>
 	)
 }
+
+

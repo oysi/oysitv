@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import styles from "./index.module.css";
 
+import Layout from "../../components/Layout.js";
+
 export default function Index() {
 	return (
 		<div className={styles.index}>
@@ -25,4 +27,11 @@ export default function Index() {
 		</div>
 		</div>
 	)
+}
+
+Index.getInitialProps = () => {
+	return {
+		ignore_navbar: true,
+		ignore_layout: true,
+	}
 }
