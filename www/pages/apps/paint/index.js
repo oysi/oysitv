@@ -58,3 +58,17 @@ export default function Index() {
 		</canvas>
 	)
 }
+
+// Index.getInitialProps = () => {
+// 	return {
+// 		ignore_layout: true,
+// 	}
+// }
+
+export async function getStaticProps() {
+	return {
+		props: {
+			ignore_layout: true,
+		}
+	}
+}

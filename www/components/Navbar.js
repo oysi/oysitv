@@ -35,7 +35,7 @@ export default function Index() {
 					<ul>
 						<li><Link href="/"><a style={get_style("/")}>Home</a></Link></li>
 						<li><Link href="/apps"><a style={get_style("/apps")}>Apps</a></Link></li>
-						<li><Link href="/test"><a style={get_style("/test")}>Test</a></Link></li>
+						<li><Link href="/blog"><a style={get_style("/blog")}>Blog</a></Link></li>
 					</ul>
 				</div>
 				<div className={styles.right}>
@@ -47,5 +47,3 @@ export default function Index() {
 		</div>
 	)
 }
-
-
