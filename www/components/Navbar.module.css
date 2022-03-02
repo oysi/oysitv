@@ -53,13 +53,13 @@
 
 .oysi {
 	/* color: var(--accent1); */
-	/* color: var(--accent1); */
+	color: var(--accent1);
 }
 
 .dottv {
 	/* color: var(--accent1); */
 	/* font-size: calc(1.5rem * 0.75); */
-	/* color: var(--accent1); */
+	color: var(--accent1);
 }
 
 .center {
@@ -89,6 +89,7 @@
 
 .right div {
 	/* color: var(--white2); */
+	/* color: var(--accent1); */
 }
 
 @media (max-width: 600px) {
