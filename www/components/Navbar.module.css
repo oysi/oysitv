@@ -77,6 +77,7 @@
 	padding: 10px 10px;
 	margin: 0px 10px;
 	box-shadow: 0px -2px 0px 0px inset var(--accent1);
+	/* color: var(--accent1); */
 }
 
 .center a:hover {
