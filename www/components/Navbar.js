@@ -5,21 +5,6 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 
-const nav = [
-	{
-		name: "Home",
-		path: "/",
-	},
-	{
-		name: "Apps",
-		path: "/apps",
-	},
-	{
-		name: "Blog",
-		path: "/blog",
-	},
-]
-
 export default function Index() {
 	const router = useRouter();
 	
@@ -48,22 +33,9 @@ export default function Index() {
 				</div>
 				<div className={styles.center}>
 					<ul>
-						{
-							nav.map((item) => {
-								return (
-									<li key={item.path}>
-										<Link href={item.path}>
-											<a style={get_style(item.path)}>
-												{item.name}
-											</a>
-										</Link>
-									</li>
-								)
-							})
-						}
-						{/* <li><Link href="/"><a style={get_style("/")}>Home</a></Link></li>
+						<li><Link href="/"><a style={get_style("/")}>Home</a></Link></li>
 						<li><Link href="/apps"><a style={get_style("/apps")}>Apps</a></Link></li>
-						<li><Link href="/blog"><a style={get_style("/blog")}>Blog</a></Link></li> */}
+						<li><Link href="/blog"><a style={get_style("/blog")}>Blog</a></Link></li>
 					</ul>
 				</div>
 				<div className={styles.right}>

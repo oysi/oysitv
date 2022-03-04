@@ -141,6 +141,7 @@ export default function Index({ props }) {
 								onClick={(e) => {
 									const new_list = [];
 									set_list(new_list);
+									validate();
 								}}
 							>Clear</button>
 						</th>
@@ -169,6 +170,7 @@ export default function Index({ props }) {
 													return index2 !== index
 												})
 												set_list(new_list);
+												validate();
 											}}
 										>X</button>
 									</td>
