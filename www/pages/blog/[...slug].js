@@ -1,15 +1,10 @@
 
 import { useRouter } from "next/router";
 
+import { marked } from "marked";
+
 export default function Index() {
-	// console.log(props);
-	const router = useRouter();
-	// const { slug } = router.query;
-	const query = router.query;
-	const [year, month, name] = query?.slug ?? [];
-	
-	// console.log("slug", slug);
-	
+	const [year, month, name] = useRouter().query?.slug ?? [];
 	return (
 		<div>
 			<p>{year}</p>
@@ -17,4 +12,21 @@ export default function Index() {
 			<p>{name}</p>
 		</div>
 	)
+}
+
+import BlogList from "../../components/BlogList.js";
+
+export function getStaticProps() {
+	return {
+		props: {
+			list: BlogList,
+		},
+	}
+}
+
+export function getStaticPaths() {
+	return {
+		paths: BlogList.map((item) => item.path),
+		fallback: true,
+	}
 }

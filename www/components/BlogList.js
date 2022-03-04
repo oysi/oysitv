@@ -1,29 +1,30 @@
 
 import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { marked } from "marked";
 
 const list = [];
 
-fs.readdirSync(`${__dirname}/../../../pages/blog/`)
+fs.readdirSync(path.join("blog"))
 .map((year) => {
-	if (year.includes(".")) return;
-	fs.readdirSync(`${__dirname}/../../../pages/blog/${year}/`)
+	fs.readdirSync(path.join("blog", year))
 	.map((month) => {
-		fs.readdirSync(`${__dirname}/../../../pages/blog/${year}/${month}/`)
-		.map((file) => {
-			const info = JSON.parse(
-				fs.readFileSync(
-					`${__dirname}/../../../pages/blog/${year}/${month}/${file}/info.json`,
-					"utf8"
-				)
-			);
+		fs.readdirSync(path.join("blog", year, month))
+		.map((name) => {
+			const markdown = fs.readFileSync(path.join("blog", year, month, name), "utf8")
 			
-			if (info.show === false) return;
+			// console.log("blog", year, month, name);
+			// console.log(markdown)
 			
-			info.path = `/blog/${year}/${month}/${file}`;
+			const info = {};
 			
-			if (!info.category) {
-				info.category = "misc";
-			}
+			const {data, content} = matter(markdown);
+			
+			// info.component = <div dangerouslySetInnerHTML={{__html: marked(content)}}/>
+			info.data = data;
+			info.content = content;
+			info.path = `/blog/${year}/${month}/${name.slice(0, -3)}`
 			
 			list.push(info);
 		})

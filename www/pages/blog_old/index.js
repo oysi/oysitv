@@ -24,7 +24,7 @@ export default function Index(props) {
 	)
 }
 
-import BlogList from "./../../components/BlogList.js";
+import BlogList from "../../components/BlogList_old.js";
 
 export function getStaticProps() {
 	return {

@@ -5,7 +5,19 @@ import Head from 'next/head'
 import Navbar from "../components/Navbar.js";
 import Layout from "../components/Layout.js";
 
-export default function Index({ Component, pageProps }) {
+import { useRouter } from "next/router";
+
+// export default function Index({ Component, pageProps, bloglist }) {
+export default function Index(props) {
+	const Component = props.Component;
+	const pageProps = props.pageProps;
+	
+	const router = useRouter();
+	
+	// console.log(bloglist);
+	
+	// console.log(props);
+	
 	return (
 		<div className="App">
 			<Head>
@@ -27,4 +39,14 @@ export default function Index({ Component, pageProps }) {
 			}
 		</div>
 	)
+}
+
+import BlogList from "../components/BlogList.js";
+
+export function getStaticProps() {
+	return {
+		props: {
+			bloglist: BlogList,
+		},
+	}
 }
