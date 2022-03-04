@@ -1,15 +1,25 @@
 
 import { useRouter } from "next/router";
 
-import { marked } from "marked";
+import ReactMarkdown from "react-markdown";
 
-export default function Index() {
-	const [year, month, name] = useRouter().query?.slug ?? [];
+import CodeBlock from "../../components/CodeBlock.js";
+
+export default function Index({ list }) {
+	const router = useRouter();
+	const [year, month, name] = router.query?.slug ?? [];
+	const info = list.filter((item) => item.path === router.asPath)[0];
+	
 	return (
 		<div>
 			<p>{year}</p>
 			<p>{month}</p>
 			<p>{name}</p>
+			<ReactMarkdown
+				components={CodeBlock}
+			>
+				{info.content}
+			</ReactMarkdown>
 		</div>
 	)
 }
@@ -27,6 +37,6 @@ export function getStaticProps() {
 export function getStaticPaths() {
 	return {
 		paths: BlogList.map((item) => item.path),
-		fallback: true,
+		fallback: false,
 	}
 }

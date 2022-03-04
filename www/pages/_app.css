@@ -63,6 +63,11 @@
 	/* color: rgb(230, 230, 230); */
 }
 
+pre, code {
+	/* font-size: 16px; */
+	/* font-family: monospace; */
+}
+
 html {
 	font-size: 14px;
 }

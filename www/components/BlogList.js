@@ -25,6 +25,9 @@ fs.readdirSync(path.join("blog"))
 			info.data = data;
 			info.content = content;
 			info.path = `/blog/${year}/${month}/${name.slice(0, -3)}`
+			info.year = year;
+			info.month = month;
+			info.name = name.slice(0, -3);
 			
 			list.push(info);
 		})

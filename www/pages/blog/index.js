@@ -9,18 +9,7 @@ export default function Index(props) {
 	return (
 		<main className={styles.main}>
 			<h1>[NYI] Blog</h1>
-			<div>
-				{
-					props.list[0].content
-				}
-			</div>
-			<div>
-				{
-					marked(props.list[0].content)
-				}
-			</div>
-			<div dangerouslySetInnerHTML={{__html: marked(props.list[0].content)}}></div>
-			{/* {
+			{
 				props.list.map((item) => {
 					return (
 						<div key={item.path}>
@@ -32,7 +21,7 @@ export default function Index(props) {
 						</div>
 					)
 				})
-			} */}
+			}
 		</main>
 	)
 }
