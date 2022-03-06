@@ -36,7 +36,6 @@ export default function Index() {
 						<li><Link href="/"><a style={get_style("/")}>Home</a></Link></li>
 						<li><Link href="/apps"><a style={get_style("/apps")}>Apps</a></Link></li>
 						<li><Link href="/blog"><a style={get_style("/blog")}>Blog</a></Link></li>
-						<li><Link href="/blog2"><a style={get_style("/blog2")}>Blog2</a></Link></li>
 					</ul>
 				</div>
 				<div className={styles.right}>

@@ -1,8 +1,23 @@
 
 .main {
-	
+	/* background-color: orange; */
+	/* max-width: 400px; */
 }
 
 .main a {
 	text-decoration: underline;
+}
+
+.createdAt {
+	color: rgb(100, 100, 100);
+}
+
+.index1 {
+	display: flex;
+	justify-content: center;
+}
+
+.index2 {
+	/* width: 800px; */
+	/* max-width: 70%; */
 }

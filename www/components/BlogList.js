@@ -29,6 +29,10 @@ fs.readdirSync(path.join("blog"))
 			info.month = month;
 			info.name = name.slice(0, -3);
 			
+			for (let key in data) {
+				info[key] = data[key];
+			}
+			
 			list.push(info);
 		})
 	})
