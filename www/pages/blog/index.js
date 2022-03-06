@@ -8,7 +8,7 @@ import { marked } from "marked";
 export default function Index(props) {
 	return (
 		<main className={styles.main}>
-			<h1>[NYI] Blog</h1>
+			<h1>Blog</h1>
 			{
 				props.list.map((item) => {
 					return (
