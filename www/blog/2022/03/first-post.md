@@ -52,7 +52,7 @@ pre, code, code * {
 
 The issue is that the syntax highlighter will put all kinds of tags inside any `<code>` tag, so just the `code` rule isn't enough. `code *` will override the previous `*` rule, such that everything inside uses Consolas, which is a monospaced font. I'm sure there are better ways of doing this, and the css masters are cringing at me right now. But this works. And after hours of struggling, realizing this one simple fix was so incredibly satisfying.
 
-I ended up using `react-markdown` for the markdown and `react-syntax-highlighter` for the syntax highlighting. I guess the names are pretty self-explanatory. For completeness sake, here's what my markdown component looks like right now:
+I ended up going with `react-markdown` for the markdown and `react-syntax-highlighter` for the syntax highlighting. I guess the names are pretty self-explanatory. For completeness sake, here's what my markdown component looks like right now:
 
 ```jsx
 import ReactMarkdown from "react-markdown";
