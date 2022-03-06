@@ -26,7 +26,9 @@ The server uses Nginx configured as a reverse proxy. Nginx handles all traffic i
 
 ## Frontend
 
-At first I started with Express.js to serve static HTML pages. I quickly realized I would be repeating myself too much if I were to scale up the website to any meaningful degree. Then I found React, which was pretty great, but I didn't particularly like how it did routing. Now here's where I made a mistake. I thought it was a choice between Next.js and React. Turns out Next.js **is** React, just with some additional bells and whistles. Most importantly, it has built-in directory-based routing, which is exactly what I was looking for.
+At first I started with Express.js to serve static HTML pages. Though I quickly realized I would be repeating myself too much if I were to scale up the website to any meaningful degree. Then I found React, which was pretty great, but I didn't particularly like how it did routing.
+
+Now here's where I made a mistake. I thought it was a choice between Next.js and React. Turns out Next.js **is** React, just with some additional bells and whistles. Most importantly, it has built-in directory-based routing, which is exactly what I was looking for.
 
 ## Blog
 
@@ -48,7 +50,7 @@ pre, code, code * {
 }
 ```
 
-The issue is that the syntax highlighter will put all kinds of tags inside any `<code>` tag, so just the `code` rule isn't enough. `code *` will override override the previous `*` rule, such that everything inside uses Consolas, which is a monospaced font. I'm sure there are better ways of doing this, and the css masters are cringing at me right now. But this works. And after hours of struggling, realizing this one simple fix was so incredibly satisfying.
+The issue is that the syntax highlighter will put all kinds of tags inside any `<code>` tag, so just the `code` rule isn't enough. `code *` will override the previous `*` rule, such that everything inside uses Consolas, which is a monospaced font. I'm sure there are better ways of doing this, and the css masters are cringing at me right now. But this works. And after hours of struggling, realizing this one simple fix was so incredibly satisfying.
 
 I ended up using `react-markdown` for the markdown and `react-syntax-highlighter` for the syntax highlighting. I guess the names are pretty self-explanatory. For completeness sake, here's what my markdown component looks like right now:
 
@@ -90,7 +92,7 @@ export default function Markdown({ children }) {
 
 ## Closing thoughts
 
-So far this has been a very interesting project. After countless hours of work I have achieved what you can achieve in 5 minutes with a CMS. I definitely don't regret it, though. I've learned a lot, and there's a nice sense of freedom by not committing too hard to any one tool. I guess I am pretty bound by React at this point. Although as far as committments go, that's not a bad one.
+So far this has been a very interesting project. After countless hours of work I have achieved what you can achieve in 5 minutes with a CMS. I definitely don't regret it, though. I've learned a lot, and there's a nice sense of freedom by not committing too hard to any one tool. I guess I am pretty bound by React at this point though, but as far as committments go, that's not a bad one.
 
 ## Thank you!
 
@@ -98,7 +100,7 @@ Thank you for reading.
 
 But more importantly, thank you to everyone who helped me in this process, whether you realize it or not. The internet truly is an amazing place. If I have a problem, I can just google it and instantly find people sharing their issues and solutions online. From the bottom of my heart, thank you to everyone who helps by contributing your knowledge online!
 
-Here are some resources that really helped me so far:
+Here are some resources that really helped me:
 
 [Youtube - The Digital Life - Reverse proxy nginx letsencrypt tutorial](https://www.youtube.com/watch?v=DyXl4c2XN-o)
 
