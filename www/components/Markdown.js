@@ -6,7 +6,6 @@ import { vscDarkPlus as style } from "react-syntax-highlighter/dist/cjs/styles/p
 export default function Markdown({ children }) {
 	return (
 		<ReactMarkdown
-			children={children}
 			components={{
 				pre: ({ children }) => {
 					return children;
@@ -19,14 +18,17 @@ export default function Markdown({ children }) {
 							<SyntaxHighlighter
 								style={style}
 								language={language}
-								children={code}
-							/>
+							>
+								{code}
+							</SyntaxHighlighter>
 						)
 					} else {
 						return <code className="code-inline">{children}</code>
 					}
 				},
 			}}
-		/>
+		>
+			{children}
+		</ReactMarkdown>
 	)
 }
