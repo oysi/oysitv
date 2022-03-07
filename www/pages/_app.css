@@ -1,8 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-/* @import url("../styles/prism-atom-dark.css"); */
-/* @import url("../lib/prism.css") */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 
 :root {
 	color-scheme: dark;
@@ -66,61 +63,35 @@
 	/* color: rgb(230, 230, 230); */
 }
 
-a {
-	color: rgb(100, 200, 255);
-}
-
 html {
-	font-family: Montserrat, sans-serif;
+	/* font-family: Montserrat, sans-serif; */
 	font-size: 16px;
 }
 
 * {
-	font-family: Montserrat, sans-serif;
+	font-family: montserrat, verdana, helvetica, sans-serif;
 	/* font-size: 16px; */
 }
 
+a {
+	/* color: rgb(100, 200, 255); */
+	color: var(--accent1);
+}
+
 pre, code, code * {
-	font-family: Consolas;
+	font-family: consolas, monospace;
 	font-size: 14px;
 }
 
-code {
-	/* font-family: Consolas; */
-}
-
-body {
-	/* font-family: Montserrat, sans-serif; */
-	/* font-weight: bold; */
-}
-
 .code-inline {
-	/* background-color: black; */
-	/* border-radius: 5px; */
-	/* border: 1px solid white; */
-	/* padding: 0px 5px; */
-	/* color: #F92672; */
 	color: #FDA23A;
 	background-color: var(--bg1);
 	padding: 0px 5px;
 	border-radius: 5px;
 }
 
-pre, code {
-	/* font-size: 16px; */
-	/* font-family: Consolas; */
-}
-
 body {
 	overflow-x: hidden;
-}
-
-pre {
-	/* max-width: 50%; */
-	/* max-width: 400px; */
-	/* position: relative; */
-	/* max-width: 30%; */
-	/* width: 40px; */
 }
 
 html, body {
@@ -133,17 +104,6 @@ html, body {
 	/* background-color: darkgreen; */
 }
 
-/* .Index1 {
-	display: flex;
-	justify-content: center;
-}
-
-.Index2 {
-	width: 1000px;
-	margin: 20px;
-	padding: 20px;
-} */
-
 .bubble {
 	border: 1px solid var(--white2);
 	border-radius: 10px;
@@ -151,14 +111,6 @@ html, body {
 	padding: 10px;
 	margin: 0px 0px;
 }
-
-
-/* h1 { font-size: 1.5rem; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.3rem; }
-h4 { font-size: 1.2rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1.0rem; } */
 
 h1 { font-size: 2.00rem; }
 h2 { font-size: 1.50rem; }
@@ -179,18 +131,11 @@ p, h1, h2, h3, h4, h5, h6 {
 	padding: 10px 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	/* color: var(--accent1); */
-}
-
 button, input {
 	background-color: rgb(30, 30, 30);
 	padding: 2px;
 	border-radius: 5px;
 	border: 2px solid rgb(50, 50, 50);
-}
-
-button {
 }
 
 input:focus {

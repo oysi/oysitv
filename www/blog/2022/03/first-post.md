@@ -38,7 +38,7 @@ Syntax highlighting ended up being deceptively hard, but a lot of that was becau
 
 ```css
 * {
-	font-family: Montserrat, sans-serif;
+	font-family: montserrat, verdana, helvetica, sans-serif;
 }
 ```
 
@@ -46,7 +46,7 @@ Not only is the font very cheesy, but this tiny bit of css caused me so many hou
 
 ```css
 pre, code, code * {
-	font-family: Consolas;
+	font-family: consolas, monospace;
 }
 ```
 
@@ -92,7 +92,7 @@ export default function Markdown({ children }) {
 
 ## Closing thoughts
 
-So far this has been a very interesting project. After countless hours of work I have achieved what you can achieve in 5 minutes with a CMS. I definitely don't regret it, though. I've learned a lot, and there's a nice sense of freedom by not committing too hard to any one tool. I guess I am pretty bound by React at this point though, but as far as committments go, that's not a bad one.
+So far this has been a very interesting project. After countless hours of work I have achieved what you can achieve in 5 minutes with a CMS. I definitely don't regret it, though. I've learned a lot, and there's a nice sense of freedom by not committing too hard to any one tool. I guess I'm pretty bound by React at this point though, but as far as committments go, that's not a bad one.
 
 ## Thank you!
 

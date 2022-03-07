@@ -13,15 +13,7 @@ const get_date = (str) => {
 	const d = date.slice(8, 10);
 	const y = date.slice(11, 15);
 	
-	console.log("HEllo");
-	
 	return `${m} ${Number(d)}, ${y}`;
-	
-	console.log("m", m);
-	console.log("d", d);         
-	console.log("y", y);
-	
-	return date.slice(4, 15);
 }
 
 export default function Index({ list }) {

@@ -1,50 +1,12 @@
 
-import Head from 'next/head'
-import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
 import styles from './index.module.css'
-
-import Markdown from "../components/Markdown.js";
-
-const markdown = `
-\`\`\`jsx
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus as style } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
-export default function Markdown({ children }) {
-	return (
-		<ReactMarkdown
-			children={children}
-			components={{
-				code({ className, children }) {
-					if (className) {
-						const language = className.replace("language-", "");
-						const code = children[0].slice(0, -1);
-						return (
-							<SyntaxHighlighter
-								style={style}
-								language={language}
-								children={code}
-							/>
-						);
-					} else {
-						return <code>{children}</code>;
-					}
-				}
-			}}
-		/>
-	);
-}
-\`\`\`
-`
 
 export default function Index() {
 	return (
 		<main className={styles.main}>
 			<h1>Welcome to oysi.tv</h1>
 			<p>
-				Hello! This is my personal website project.
+			Hello! This is my personal website project.
 			</p>
 			<p>Release the river!</p>
 			
