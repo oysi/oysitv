@@ -83,6 +83,18 @@ pre, code, code * {
 	font-size: 14px;
 }
 
+pre {
+	border-radius: 5px;
+}
+
+pre {
+	/* border: 1px solid rgb(0, 0, 0); */
+}
+
+p {
+	line-height: 150%;
+}
+
 .code-inline {
 	color: #FDA23A;
 	background-color: var(--bg1);

@@ -38,7 +38,7 @@ Syntax highlighting ended up being deceptively hard, but a lot of that was becau
 
 ```css
 * {
-	font-family: montserrat, verdana, helvetica, sans-serif;
+	font-family: montserrat, sans-serif;
 }
 ```
 

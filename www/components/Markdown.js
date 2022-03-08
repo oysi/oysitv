@@ -1,7 +1,7 @@
 
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus as style } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
+import CodeBlock from "./CodeBlock.js";
 
 export default function Markdown({ children }) {
 	return (
@@ -12,16 +12,9 @@ export default function Markdown({ children }) {
 				},
 				code: ({ className, children }) => {
 					if (className) {
-						const language = className.replace("language-", "");
+						const lang = className.replace("language-", "");
 						const code = children[0].slice(0, -1);
-						return (
-							<SyntaxHighlighter
-								style={style}
-								language={language}
-							>
-								{code}
-							</SyntaxHighlighter>
-						)
+						return <CodeBlock lang={lang}>{code}</CodeBlock>
 					} else {
 						return <code className="code-inline">{children}</code>
 					}
