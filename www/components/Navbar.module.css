@@ -13,7 +13,9 @@
 
 .navbar {
 	/* background-color: var(--bg1); */
-	width: var(--global-width);
+	/* width: var(--global-width); */
+	/* width: 1200px; */
+	width: 100%;
 	height: var(--navbar-height);
 	display: flex;
 	justify-content: space-between;

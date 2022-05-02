@@ -98,7 +98,7 @@ So far this has been a very interesting project. After countless hours of work I
 
 Thank you for reading.
 
-But more importantly, thank you to everyone who helped me in this process, whether you realize it or not. The internet truly is an amazing place. If I have a problem, I can just google it and instantly find people sharing their issues and solutions online. From the bottom of my heart, thank you to everyone who helps by contributing your knowledge online!
+But more importantly, thank you to everyone who helped me in this process, whether you realize it or not. The internet truly is an amazing place. If I have a problem, I can just google it and instantly find people sharing their issues and solutions online. Thank you to everyone who helps by contributing your knowledge online!
 
 Here are some resources that really helped me:
 
